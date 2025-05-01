@@ -17,6 +17,11 @@ $router->get('/', function () use ($router) {
     return $router->app->version();
 });
 
+$router->post('auth/login', 'AuthController@login');
+$router->post('auth/logout', 'AuthController@logout');
+$router->post('auth/refresh', 'AuthController@refresh');
+$router->post('auth/info', 'AuthController@user_info');
+
 $router->get('/mahasiswa', 'MahasiswaController@index');
 $router->get('/mahasiswa/{npm}', 'MahasiswaController@read');
 $router->post('/mahasiswa', 'MahasiswaController@create');
