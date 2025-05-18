@@ -80,6 +80,10 @@ $app->configure('app');
 //     'auth' => App\Http\Middleware\Authenticate::class,
 // ]);
 
+$app->middleware([
+    Nord\Lumen\Cors\CorsMiddleware::class,
+]);
+
 /*
 |--------------------------------------------------------------------------
 | Register Service Providers
@@ -99,6 +103,9 @@ $app->configure('app');
 $app->register(Tymon\JWTAuth\Providers\LumenServiceProvider::class);
 $app->alias('JWTAuth', Tymon\JWTAuth\Facades\JWTAuth::class);
 $app->alias('JWTFactory', Tymon\JWTAuth\Facades\JWTFactory::class);
+
+// cors
+$app->register(Nord\Lumen\Cors\CorsServiceProvider::class);
 
 /*
 |--------------------------------------------------------------------------
