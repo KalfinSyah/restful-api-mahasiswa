@@ -14,7 +14,7 @@ return [
     // this allow user from 
     // localhost, localhost:3000
     // to access the API
-    'allow_origins' => ['http://localhost', 'http://localhost:3000'],
+    'allow_origins' => explode(',', env('ALLOW_ORIGINS')),
 
     /*
     |--------------------------------------------------------------------------
